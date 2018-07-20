@@ -1,0 +1,199 @@
+<?php get_header(); ?>
+
+<?php
+/** Themify Default Variables
+ *  @var object */
+global $themify; ?>
+
+<!-- layout-container -- page.php -->
+<div id="layout" class="clearfix">	
+
+<?php // CALDOL -- only show the nav-bar to logged in users ?>
+<?php if( false && (true || is_user_logged_in() ) ) {?>
+<aside id="caldol-nav-sidebar">
+    <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('caldol-nav-sidebar') ) ?>
+</aside>
+<?php }?>
+	<?php themify_content_before(); //hook ?>
+	<!-- content -->
+	<div id="content" class="clearfix">
+    	<?php themify_content_start(); //hook ?>
+	
+
+		
+		<?php 
+		/////////////////////////////////////////////
+		// PAGE							
+		/////////////////////////////////////////////
+		?>
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<div id="page-<?php the_ID(); ?>" class="type-page" itemscope itemtype="http://schema.org/Article">
+			
+			<!-- page-title -->
+			<?php if($themify->page_title != "yes"): ?>
+				<time datetime="<?php the_time( 'o-m-d' ); ?>" itemprop="datePublished"></time>
+				<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
+			<?php endif; ?>	
+			<!-- /page-title -->
+			
+			<div class="page-content entry-content" itemprop="articleBody">
+			
+				<?php if ( $themify->hide_page_image != 'yes' && has_post_thumbnail() ) : ?>
+					<figure class="post-image"><meta itemprop="image" content="<?php echo esc_url( wp_get_attachment_thumb_url( get_post_thumbnail_id() ) ); ?>" /><?php themify_image( "{$themify->auto_featured_image}w={$themify->page_image_width}&h=0&ignore=true" ); ?></figure>
+				<?php endif; ?>
+
+		<?php /**********    check pages that can be seen by the public    **********/ ?>
+		<?php 
+		global $post;
+		$slug = get_post( $post )->post_name;
+		
+		 if( is_user_logged_in() ||
+			is_front_page() || 
+			$slug == 'register' || 
+			$slug == 'about-pl' || 
+			$slug == 'contact-us' ||
+                        $slug == 'cclpd'  ||
+			$slug == 'ccdp-registration-form'
+			//($slug == 'cclpd' && $validReferrer)
+		  ): ?>	
+		<!-- inside logged in check -->
+
+					<?php get_template_part('includes/loop', 'caldol-files');//$themify->query_post_type); ?>
+
+			<?php //the_content(); ?>
+				
+				<?php wp_link_pages(array('before' => '<p class="post-pagination"><strong>'.__('Pages:','themify').'</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
+				
+				<?php edit_post_link(__('Edit','themify'), '[', ']'); ?>
+			
+				<!-- comments -->
+				<?php if(!themify_check('setting-comments_pages') && $themify->query_category == ""): ?>
+					<?php comments_template(); ?>
+				<?php endif; ?>
+				<!-- /comments -->
+
+<?php else:
+
+//if(!$validReferrer){
+if(true){
+echo "<!-- this if is true -->";
+//echo "(" . $myReferrer . ")";
+  //echo "not valid";
+  echo "This page can only be reached by <a href='/wp-login.php'>logging into this forum</a><br/>";
+ 
+}
+?>
+
+		<?php endif; //is_user_logged_in?>			
+			</div>
+			<!-- /page-content -->
+		
+			</div><!-- /.type-page -->
+		<?php endwhile; endif; ?>
+		
+		<?php 
+		/////////////////////////////////////////////
+		// Query Category							
+		/////////////////////////////////////////////
+		?>
+
+		<?php 
+		///////////////////////////////////////////
+		// Setting image width, height
+		///////////////////////////////////////////
+		
+		if($themify->query_category != ""): ?>
+		
+			<?php if(themify_get('section_categories') != 'yes'): ?>
+			
+				<?php query_posts( apply_filters( 'themify_query_posts_page_args', 'cat='.$themify->query_category.'&posts_per_page='.$themify->posts_per_page.'&paged='.$themify->paged.'&order='.$themify->order.'&orderby='.$themify->orderby ) ); ?>
+				
+					<?php if(have_posts()): ?>
+					
+						<!-- loops-wrapper -->
+						<div id="loops-wrapper" class="loops-wrapper <?php echo $themify->layout . ' ' . $themify->post_layout; ?>">
+
+							<?php while(have_posts()) : the_post(); ?>
+								
+					<?php get_template_part('includes/loop', 'caldol-files');//$themify->query_post_type); ?>
+						
+							<?php endwhile; ?>
+												
+						</div>
+						<!-- /loops-wrapper -->
+
+						<?php if ($themify->page_navigation != "yes"): ?>
+							<?php get_template_part( 'includes/pagination'); ?>
+						<?php endif; ?>
+							
+					<?php else : ?>	
+					
+					<?php endif; ?>
+
+			<?php else: ?>
+				
+				<?php $categories = explode(",",str_replace(" ","",$themify->query_category)); ?>
+				
+				<?php foreach($categories as $category): ?>
+				
+				<?php $category = get_term_by(is_numeric($category)? 'id': 'slug', $category, 'category');
+					$cats = get_categories( array( 'include' => isset( $category ) && isset( $category->term_id )? $category->term_id : 0, 'orderby' => 'id' ) ); ?>
+				
+				<?php foreach($cats as $cat): ?>
+					
+					<?php query_posts( apply_filters( 'themify_query_posts_page_args', 'cat='.$cat->cat_ID.'&posts_per_page='.$themify->posts_per_page.'&paged='.$themify->paged.'&order='.$themify->order.'&orderby='.$themify->orderby ) );	?>
+			
+					<?php if(have_posts()): ?>
+						
+						<!-- category-section -->
+						<div class="category-section clearfix <?php echo $cat->slug; ?>-category">
+
+							<h3 class="category-section-title"><a href="<?php echo esc_url( get_category_link($cat->cat_ID) ); ?>" title="<?php _e('View more posts', 'themify'); ?>"><?php echo $cat->cat_name; ?></a></h3>
+
+							<!-- loops-wrapper -->
+							<div id="loops-wrapper" class="loops-wrapper <?php echo $themify->layout . ' ' . $themify->post_layout; ?>">
+							<?php while(have_posts()) : the_post(); ?>
+								<h1>got here</h1>
+								<?php // get_template_part('includes/loop', 'query'); ?>
+					<?php get_template_part('includes/loop', 'caldol-files');
+								//$themify->query_post_type); ?>
+						
+							<?php endwhile; ?>
+							</div>
+							<!-- /loops-wrapper -->
+
+							<?php if ($themify->page_navigation != "yes"): ?>
+								<?php get_template_part( 'includes/pagination'); ?>
+							<?php endif; ?>
+
+						</div>
+						<!-- /category-section -->
+								
+					<?php else : ?>	
+					
+					<?php endif; ?>
+				
+				<?php endforeach; ?>
+				
+				<?php endforeach; ?>
+			
+			<?php endif; ?>
+			
+		<?php endif; ?>
+		<?php wp_reset_query(); ?>
+        
+        <?php themify_content_end(); //hook ?>
+	</div>
+	<!-- /content -->
+    <?php themify_content_after() //hook; ?>
+	
+	<?php 
+	/////////////////////////////////////////////
+	// Sidebar							
+	/////////////////////////////////////////////
+	if (is_user_logged_in() && $themify->layout != "sidebar-none"): get_sidebar(); endif; ?>
+	
+</div>
+<!-- /layout-container -->
+	
+<?php get_footer(); ?>

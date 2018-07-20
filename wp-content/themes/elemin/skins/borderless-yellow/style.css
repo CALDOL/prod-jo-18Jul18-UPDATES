@@ -1,0 +1,135 @@
+/*  
+Skin Name: Borderless Yellow
+Version: 1.0
+Description: Skin for Elemin
+*/
+
+body {
+	background-color: #fff78c;
+	color: #7b5223;
+}
+a {
+	color: #ad6504;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #3d2003;
+}
+
+/* form fields */
+input[type=text], input[type=password], textarea, input[type=search] {
+	background-color: #eee685;
+	border-color: #e1da84;
+	color: #000;
+}
+input[type=text]:focus, input[type=password]:focus, textarea:focus, input[type=search]:focus {
+	background-color: #fff;
+}
+
+/* form button */
+input[type=reset], input[type=submit] {
+	background-color: #3d2003;
+}
+input[type=reset]:hover, input[type=submit]:hover {
+	background-color: #000;
+}
+
+/************************************************************************************
+STRUCTURE
+*************************************************************************************/
+#pagewrap {
+	background: none;
+	border: none;
+}
+#pagewrap:before, #pagewrap:after {
+	display: none;
+}
+
+/************************************************************************************
+HEADER
+*************************************************************************************/
+#header {
+	border-color: #8c6239;
+}
+
+/* site logo */
+#site-logo a {
+	color: #3d2003;
+}
+
+/* site description */
+#site-description {
+	color: #7f4f15;
+}
+
+/************************************************************************************
+MAIN NAVIGATION
+*************************************************************************************/
+.main-nav {
+	border-color: #e5de7e;
+}
+/* main level link */
+.main-nav a {
+	color: #a16009;
+}
+
+/************************************************************************************
+POST
+*************************************************************************************/
+.post-title, .post-title a {
+	color: #3d2003;
+}
+
+/* post meta */
+.list-post .post-icon {
+	border-color: #e5de7e;
+}
+
+/* post nav */
+.post-nav a {
+	color: #7f4f15;
+}
+.post-nav .arrow {
+	background-color: #3d2003;
+}
+
+/************************************************************************************
+COMMENTS
+*************************************************************************************/
+.commentlist {
+	border-color: #3d2003;
+}
+.commentlist .commententry {
+	border-color: #e5de7e;
+}
+
+/************************************************************************************
+SIDEBAR
+*************************************************************************************/
+.widget li {
+	border-color: #e5de7e;
+}
+
+/************************************************************************************
+Footer
+*************************************************************************************/
+#footer {
+	border-color: #8c6239;
+}
+#footer-logo a {
+	color: #3d2003;
+}
+
+/* footer nav */
+.footer-nav {
+	border-color: #e5de7e;
+}
+
+/* back top */
+.back-top a {
+	background-color: #3d2003;
+}

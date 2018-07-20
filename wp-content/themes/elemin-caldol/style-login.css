@@ -1,0 +1,70 @@
+
+html body.login{
+background: #000000 url() no-repeat top left !important
+}
+#login {
+margin-top: 30px;
+background-color: #ffffff;
+padding: 20px 50px;
+border: 6px solid gold;
+border-radius: 5px;
+}
+
+body.login #nav a, body.login #backtoblog a{
+font-size: 1.2em;
+//color: black !important;
+}
+
+#login{
+  width: 50%;
+}
+
+#login #usg-banner-leadline{
+margin-bottom: 15px;
+border-bottom: 2px solid gray;
+padding-bottom: 4px;
+text-align: center;
+}
+
+#login #usg-banner{
+    background-color: cornsilk;
+    border: 4px solid red;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+#login #usg-banner ul{
+    margin-left: 15px;
+}
+
+#more-banner-terms-trigger{
+ cursor: pointer;
+ color: blue;
+ font-weight: bold;
+font-variant: small-caps;
+}
+
+#more-banner-terms{
+ display: none; 
+}
+
+
+p.forgetmenot{
+    display: none;
+}
+
+
+@media screen and (max-width: 980px) {
+
+
+	body.login #login{
+	width: 60%;
+}
+}
+
+@media screen and (max-width: 760px) {
+
+	body.login #login{
+	width: 60%;
+}
+}

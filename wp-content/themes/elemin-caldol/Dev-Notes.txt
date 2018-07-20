@@ -1,0 +1,13 @@
+-- Use tags to distinguish topics (discussions), such as cc, pl,
+
+-- set the properties for bbPress forums, including the attachment settings.
+
+-- create a page for cc, staff, xo, pl, bolc  (that should be the order on the menu as well)
+use the "order" field on the forum object itself to order them.
+
+
+
+
+
+
+  

@@ -1,0 +1,167 @@
+div.Section1 body{
+
+    background: #BFA73B url('/pubs/armymagazine/images/bg.gif')	;
+
+    margin: 0 auto;
+    text-align:center;
+}
+div.Section1 a{
+    color:  #0000CC;
+}
+div.Section1 a:visited{
+    color:  #0000CC;
+}
+
+div.Section1 a:hover{
+    color: maroon;
+}
+
+
+
+div.Section1{
+
+    background: #AD946B url('/pubs/armymagazine/images/contentBackground_xsmall_new.gif');
+    width:80%;
+    margin:0 auto;
+    margin-top:50px;
+    border:5px solid maroon;
+    padding:10px;
+    text-align:left;
+}
+div.Section1 .YearListing {
+    display:none;
+    margin: 10px;
+}
+div.Section1 .YearMarker {
+    width:auto;
+    font-style: normal;
+    font-weight: bold;
+    font-variant: normal;
+    font-size:24px;
+    padding:6px 2px 0px 27px;
+    color: #fff;
+    background:#3F331F url('/pubs/armymagazine/images/open.gif') no-repeat 5px center;
+    margin:0;
+    border-bottom: 4px solid black;
+    border-left:4px solid gray;
+}
+
+div.Section1 .YearHeader {
+    background-color:#3F331F;
+    width:auto;
+
+    padding:0;
+    margin:0;
+
+}
+div.Section1 .ArticleTitle {
+    color: darkblue;
+    display: block;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    font-variant:small-caps;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 10px;
+    margin-top: 20px;
+	line-height: normal;
+}
+div.Section1 .indented {
+    margin-left: 20px;
+    text-indent: 30px;
+    margin:0 0 10px 0;
+    font-style:italic;
+    font-size:18px;
+}
+div.Section1 a {
+    text-decoration:none;
+    cursor:pointer;
+}
+
+div.Section1 .ArticleDate {
+    color:black;
+    font-size:12px;
+}
+div.Section1 .compilation {
+    color:black;
+    font-size:12px;
+    background:url('/pubs/armymagazine/images/pdf_icon.gif') no-repeat 98px center;
+
+}
+div.Section1 #hideAll, #showAll {
+    font-size:10px;
+}
+div.Section1 a.readMore {
+    font-variant:small-caps;
+    font-size:12px;
+    font-weight:bold;
+    color: maroon;
+}
+div.Section1 a.readMore:hover{
+    color:  #0000CC;
+}
+
+div.Section1 a.readMore:visited{
+    color:  maroon;
+}
+
+div.Section1 h1{
+    font-variant:small-caps;
+    font-size:1.6em;
+}
+
+a.readMore::before, span.ArticleDate::before {
+	content: "\A";
+	white-space: pre;
+}
+
+p.army-mag-intro{
+	font-size: 1.0em;
+}
+
+p.expand-buttons{
+	text-align: center;
+}
+
+/*******  MOBILE CSS.   *********/
+
+@media screen and (max-width: 480px) {
+	#content.army-magazine p {
+	font-size: 14px;
+
+}
+
+		#content.army-magazine p.indented {
+	font-weight: normal;
+
+}
+	
+
+	p.ArticleTitle a, span.ArticleDate{
+		font-weight: bold;
+	}
+}
+
+@media screen and (max-device-width: 1024px) {
+	
+	#headerwrap #site-description {
+	
+	font-size: 3.0em !important;
+
+}
+	#content.army-magazine p {
+	font-size: 14px;
+
+}
+
+		#content.army-magazine p.indented {
+	font-weight: normal;
+
+}
+	
+
+	p.ArticleTitle a, span.ArticleDate{
+		font-weight: bold;
+	}
+}

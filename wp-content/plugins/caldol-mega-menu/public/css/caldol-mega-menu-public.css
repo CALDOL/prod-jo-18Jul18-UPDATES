@@ -1,0 +1,249 @@
+.mega-menu-box .display-posts-listing a.title {
+    font-size: 14px;
+}
+
+
+#jo-mega-menu {
+
+    background-color: rgba(0,0,0,1.0);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+
+#jo-mega-menu .mega-menu-wrapper {
+
+    display: none;
+    /*grid-template-columns: repeat(auto-fill, 25%);*/
+
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap: 0px;
+
+    color: #444;
+
+    justify-content: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+#jo-mega-menu .mega-menu-wrapper.lower {
+
+    display: none;
+ 	-ms-grid-columns: 1fr 1fr 1fr;
+     grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+    grid-gap: 0px;
+    color: #444;
+
+    justify-content: center;
+
+
+}
+
+.mega-menu-box{
+
+    color: #fff;
+    border-radius: 0px;
+    padding: 20px;
+    justify-self: center;
+    /* font-size: 150%; */
+}
+
+
+
+#footer .mega-menu-box a:hover{
+    color:  #ffffff;
+    text-decoration: none;
+
+}
+.mega-menu-box a.active{
+    color:  #FAC35F;
+    cursor: pointer;
+
+}
+
+#footer .not-logged-in .mega-menu-box a{
+    color:  #c3c3c3;
+    cursor: default;
+}
+
+#footer .not-logged-in .mega-menu-box a:hover{
+    color:  #ffffff;
+    text-decoration: none;
+
+}
+#footer .not-logged-in .mega-menu-box a.active{
+    color:  #FAC35F;
+    cursor: pointer;
+
+}
+
+
+.mega-menu-box.communities{
+
+    -ms-grid-column: 1;
+  -ms-grid-row: 1;
+}
+
+.mega-menu-box.topics{
+
+    -ms-grid-column: 2;
+  -ms-grid-row: 1;
+}
+
+.mega-menu-box.special{
+
+    -ms-grid-column: 3;
+  -ms-grid-row: 1;
+}
+.mega-menu-box.resources{
+
+    -ms-grid-column: 4;
+  -ms-grid-row: 1;
+}
+.mega-menu-box.discussions{
+
+    -ms-grid-column: 1;
+  -ms-grid-row: 2;
+}
+.mega-menu-box.content{
+
+    -ms-grid-column: 2;
+  -ms-grid-row: 2;
+}
+.mega-menu-box.comments{
+
+    -ms-grid-column: 3;
+  -ms-grid-row: 2;
+}
+.mega-menu-box.views{
+
+    -ms-grid-column: 4;
+  -ms-grid-row: 2;
+}
+
+.mega-menu-box.discussion-tags{
+
+    -ms-grid-column: 1;
+  -ms-grid-row: 1;
+}
+
+.mega-menu-box.search{
+
+    -ms-grid-column: 2;
+  -ms-grid-row: 1;
+}
+.mega-menu-box.content-tags{
+
+    -ms-grid-column: 3;
+  -ms-grid-row: 1;
+}
+
+
+
+.mega-menu-title {
+
+    font-size: 1.2em;
+    text-align: center;
+
+}
+
+#jo-mega-menu-trigger{
+    cursor: pointer;
+}
+
+#jo-mega-menu-trigger > p{
+    cursor: pointer;
+    border-radius: 5px;
+    /* box-shadow: -2px -2px 4px black, 2px 2px 4px black; */
+    width: 10%;
+    margin: 15px auto;
+    text-align: center;
+    background-color: #e4e0e0;
+}
+
+#jo-mega-menu-trigger.not-logged-in {
+	cursor: pointer;
+	width: 75%;
+	margin: 0 auto;
+}
+
+#jo-mega-menu-trigger.not-logged-in  > p{
+    cursor: pointer;
+    border-radius: 5px;
+    /* box-shadow: -2px -2px 4px black, 2px 2px 4px black; */
+    width: 125px;
+    margin: 15px auto;
+    text-align: center;
+    background-color: #c3c3c3;
+}
+
+#jo-mega-menu.not-logged-in {
+
+    background-color: rgba(0,0,0,1.0);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+
+#jo-mega-menu.not-logged-in .mega-menu-wrapper {
+
+    display: grid;
+    /*grid-template-columns: repeat(auto-fill, 25%);*/
+
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap: 0px;
+
+    color: #444;
+
+    justify-content: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+#jo-mega-menu.not-logged-in .mega-menu-wrapper.lower {
+
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+    grid-gap: 0px;
+    color: #444;
+
+    justify-content: center;
+
+
+}
+
+#pagewrap::before, #pagewrap::after {
+	
+	box-shadow: none !important;
+	
+}
+#pagewrap{
+	border: none !important;
+}
+#footer{
+	border: none !important;
+}
+
+@media (max-width: 460px) {
+    .mega-menu-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+    .mega-menu-wrapper.lower {
+        grid-template-columns: 1fr;
+    }
+
+
+}
+
+@media (max-width: 660px) {
+    .mega-menu-wrapper{
+        grid-template-columns: 1fr 1fr;
+    }
+    .mega-menu-wrapper.lower{
+        grid-template-columns: 1fr;
+    }
+
+}
