@@ -14,5 +14,5 @@ global $query_string;
 }
 	
 endif;
-	?>
+
 	
