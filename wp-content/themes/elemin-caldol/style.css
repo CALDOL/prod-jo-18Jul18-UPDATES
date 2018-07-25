@@ -10,6 +10,11 @@ Text Domain: en_CALDOL
 /* load parent css   */   
 
 /*  DEV UPDATES CSS */
+/*
+the following line must be in the wp-config file
+in order for the is-development class to be used
+  define('IS-DEVELOPMENT', true);
+ */
 
 .is-development #content {
     /* width: 100%; */
