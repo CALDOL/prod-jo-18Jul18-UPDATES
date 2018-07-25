@@ -12,14 +12,14 @@ Text Domain: en_CALDOL
 /*  DEV UPDATES CSS */
 
 .is-development #content {
-    width: 100%;
+    /* width: 100%; */
     padding: 0 0 0 0;
     margin: 20px 0 30px;
     float: left;
 }
 
 .is-development aside{
-    display: none;
+   /*  display: none; */
 }
 
 .is-development #layout{
@@ -644,6 +644,13 @@ background: url() rgba(134, 166, 204, 0.4);
 #layout #sidebar{
 padding:56px 0 60px;
 width:18%;
+}
+
+#sidebar {
+    width: 260px;
+    float: right;
+    margin: 50px 0 10px 0;
+    font-size: 90%;
 }
 
 #content{

@@ -82,6 +82,7 @@ $table_prefix  = 'jo_wp_prod_';
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', true);
+define('IS-DEVELOPMENT', true);
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
@@ -94,10 +95,10 @@ require_once(ABSPATH . 'wp-settings.php');
 @ini_set('display_errors','On'); // enable or disable public display of errors (use 'On' or 'Off')
 @ini_set('error_log',ABSPATH . '/logs/php-errors-prod-jo-16jul18.log'); // path to server-writable log file
 
-//if ( !defined('WP_TEMP_DIR') ) {
+if ( !defined('WP_TEMP_DIR') ) {
     define('WP_TEMP_DIR', dirname(__FILE__) . '/wp-content/temp/');
     //define('WP_TEMP_DIR', ABSPATH . '../wp_temp/');
-//}
+}
 define('FS_METHOD', 'direct');
 /* That's all, stop editing! Happy blogging. */
 

@@ -54,8 +54,8 @@ if (in_array($user_ID, $os)) {
 */
   ?>
 <?php themify_body_start(); //hook ?>
-<div id="pagewrap" class="hfeed site <?php echo (defined('IS_DEVELOPMENT'))?'is-development':'';?>">
-    <div id="headerwrap" <?php echo (defined('IS_DEVELOPMENT'))?'style="background-color: red;"':'';?>>
+<div id="pagewrap" class="hfeed site <?php echo (defined('IS-DEVELOPMENT'))?'is-development':'';?>">
+    <div id="headerwrap" <?php echo (defined('IS-DEVELOPMENT'))?'style="background-color: red;"':'';?>>
        
     	<?php themify_header_before(); //hook ?>
         <header id="header" itemscope="itemscope" itemtype="https://schema.org/WPHeader">
