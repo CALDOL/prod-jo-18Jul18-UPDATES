@@ -14,6 +14,8 @@ Text Domain: en_CALDOL
 the following line must be in the wp-config file
 in order for the is-development class to be used
      define('IS-DEVELOPMENT', true);
+
+     The intent is to remove the sidebar
  */
 
 .is-development #content {
